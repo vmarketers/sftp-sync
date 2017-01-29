@@ -1,0 +1,17 @@
+{
+    "name": "vmarketers/sftp-sync",
+    "description": "Sync sites to remote (s)ftp servers",
+    "require": {
+        "phpseclib/phpseclib": "~2.0"
+    },
+    "authors": [
+        {
+            "name": "Jermaine McFarlane",
+            "email": "jermaine@villamarketers.com"
+        }
+    ],
+    "require-dev": {
+        "wcm/git-php-hooks": "^1.0",
+        "wcm/git-php-hooks-library": "^1.0"
+    }
+}
