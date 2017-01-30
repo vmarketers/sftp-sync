@@ -31,5 +31,38 @@ class Sync
         if (!is_array($sites)) {
             throw new InvalidArgumentException("An array of Sites must be provided");
         }
+
+        $this->ignoredFiles = [
+          ".gitignore",
+          ".travis.yml",
+          ".gitlab-ci.yml",
+          "composer.json",
+          "composer.lock",
+          "README.md",
+          "VERSION.md",
+        ];
+
+        $this->ignoredFolders = [
+          "vendor",
+          "\.git"
+        ];
+    }
+
+    /**
+    * Adds a file to exclude  during sync
+    * @param string $file File path
+    */
+    public function ignoreFile($file)
+    {
+        $this->ignoredFiles[] = $file;
+    }
+
+    /**
+    * Adds a folder to exclude  during sync
+    * @param string $folder Folder path
+    */
+    public function ignoreFolder($folder)
+    {
+        $this->ignoredFolders[] = $folder;
     }
 }
